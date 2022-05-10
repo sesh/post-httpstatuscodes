@@ -1,0 +1,23 @@
+name: Publish post to Mataroa
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  publish:
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+
+    - name: Generate and publish post
+      run: |
+        python gen.py
+      env:
+        MATAROA_API_KEY: ${{ secrets.MATAROA_API_KEY }}

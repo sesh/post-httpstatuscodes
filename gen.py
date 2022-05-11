@@ -405,6 +405,8 @@ This post is generated and posted here by a Github action on the [sesh/post-http
 Pull requests more than welcome to add new status codes or links.
 
 Heavily inspired by httpstatuses.com being redirected to WebFX instead of showing a completely ad-free list of HTTP Status Codes.
+
+Content is released into the public domain with the [Unlicense](https://unlicense.org/).
 """
 
 # publish

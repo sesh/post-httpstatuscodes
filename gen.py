@@ -2,7 +2,7 @@ import os
 import sys
 from thttp import request
 
-API_KEY = os.environ.get("MATAROA_API_KEY")
+API_KEY = os.environ.get("MICROPUB_API_KEY")
 
 STATUS_CODES = {
     "100": {
@@ -415,11 +415,16 @@ if not API_KEY:
     sys.exit(1)
 else:
     response = request(
-        "https://mataroa.blog/api/posts/http-status-codes/",
+        "https://brntn.me/micropub/",
         json={
-            "body": md,
+            "action": "update",
+            "url": "https://brntn.me/blog/http-status-codes/",
+            "replace": {
+                "content": [md]
+            }
         },
         headers={"Authorization": f"Bearer {API_KEY}"},
-        method="PATCH",
+        method="POST",
     )
+    print(response)
     sys.exit(response.status != 200)

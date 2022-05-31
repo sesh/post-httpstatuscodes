@@ -21,4 +21,4 @@ jobs:
       run: |
         python gen.py
       env:
-        MATAROA_API_KEY: ${{ secrets.MATAROA_API_KEY }}
+        MICROPUB_API_KEY: ${{ secrets.MICROPUB_API_KEY }}
